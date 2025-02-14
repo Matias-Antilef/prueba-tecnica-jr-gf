@@ -1,38 +1,32 @@
-<div
-  class="bg-neutral-300 min-w-[50vw] min-h-[40vh] max-w-[60vw] max-h-[50vh] p-12 rounded-xl flex gap-2"
->
-  <section class="w-1/2 flex flex-col justify-around">
-    <h1 class="font-bold text-3xl">¡Bienvenido Ramon Hernandez!</h1>
-    <button (click)="logout()" class="bg-red-500 text-white rounded-xl py-2">
-      Logout
-    </button>
+<div class="card-container">
+  <section class="info-section">
+    <h1 class="">¡Bienvenido Ramon Hernandez!</h1>
 
-    <div class="flex gap-2 text-xl">
-      <h4 class="font-semibold">Usuario:</h4>
-      <p>ramonH23</p>
+    <div class="info-div">
+      <p><b>Usuario:</b> ramonH23</p>
     </div>
 
-    <div class="flex gap-2 text-xl">
-      <h4 class="font-semibold">Nombre:</h4>
-      <p>Ramon Hernandez</p>
+    <div class="info-div">
+      <p><b>Nombre:</b> Ramon Hernandez</p>
     </div>
 
-    <div class="flex gap-2 text-xl">
-      <h4 class="font-semibold">Email:</h4>
-      <p>ramon&#64;example.cl</p>
+    <div class="info-div">
+      <p><b>Email:</b> ramon&#64;example.cl</p>
     </div>
 
-    <div class="flex gap-2 text-xl">
-      <h4 class="font-semibold">Genero:</h4>
-      <p>Masculino</p>
+    <div class="info-div">
+      <p><b>Genero:</b> Masculino</p>
+    </div>
+    <div class="info-div">
+      <button (click)="logout()" class="">Logout</button>
     </div>
   </section>
-  <section class="bg-red-500 w-1/2 overflow-hidden rounded-xl">
-    <div class="relative h-full w-full">
+  <section class="image-section">
+    <div class="">
       <img
         src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png"
         alt=""
-        class="h-full w-full object-cover"
+        class=""
       />
     </div>
   </section>

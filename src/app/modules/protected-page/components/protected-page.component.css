@@ -1,0 +1,39 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 90vh;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.info-div {
+  display: flex;
+
+  & p {
+    font-weight: 500;
+  }
+}

@@ -1,29 +1,27 @@
-<div
-  class="bg-neutral-300 min-w-[40vw] min-h-[70vh] py-12 px-20 rounded-xl flex flex-col justify-around"
->
-  <h1 class="font-semibold text-2xl">Ingresa sesión .</h1>
-
-  <div class="flex flex-col gap-2">
-    <label for="">usuario</label>
+<div class="login-card">
+  <h1>Ingresa sesión</h1>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
     <input
       [(ngModel)]="username"
       type="text"
+      class="form-control"
+      id="username"
       placeholder="ramonH23"
-      class="rounded-xl py-1 px-3"
     />
   </div>
-
-  <div class="flex flex-col gap-2">
-    <label for="">contraseña</label>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
     <input
       [(ngModel)]="password"
       type="password"
+      class="form-control"
+      id="password"
       placeholder="*******"
-      class="rounded-xl py-1 px-3"
     />
   </div>
 
-  <button (click)="login()" type="button" class="btn btn-primary">
+  <button (click)="login()" type="submit" class="btn btn-primary">
     Ingresar
   </button>
 </div>
