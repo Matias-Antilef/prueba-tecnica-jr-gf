@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
-import { AuthResponseModel } from '../models/auth-response.model';
-import { UserDataService } from './user-data.service';
-
+import { AuthResponseModel } from '@/app/core/models/auth-response.model';
+import { UserDataService } from '@/app/core/services/user-data.service';
+import { environment } from '@/enviroments/enviroment';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private LOGIN_URL = 'https://dummyjson.com/auth/login';
+  private LOGIN_URL = environment.loginURL;
   private tokenKey = 'authToken';
 
   constructor(

@@ -1,13 +1,13 @@
 <div class="card-container">
   <section class="info-section">
-    <h1 class="">¡Bienvenido {{ user?.username }} {{ user?.lastName }}!</h1>
+    <h1 class="">¡Welcome {{ user?.username }} {{ user?.lastName }}!</h1>
 
     <div class="info-div">
-      <p><b>Usuario:</b> {{ user?.username }}</p>
+      <p><b>User:</b> {{ user?.username }}</p>
     </div>
 
     <div class="info-div">
-      <p><b>Nombre:</b> {{ user?.firstName }} {{ user?.lastName }}</p>
+      <p><b>Name:</b> {{ user?.firstName }} {{ user?.lastName }}</p>
     </div>
 
     <div class="info-div">
@@ -15,10 +15,12 @@
     </div>
 
     <div class="info-div">
-      <p><b>Genero:</b> {{ user?.gender }}</p>
+      <p><b>Genre:</b> {{ user?.gender }}</p>
     </div>
     <div class="info-div">
-      <button (click)="logout()" class="">Logout</button>
+      <button type="button" (click)="logout()" class="btn btn-danger">
+        Logout
+      </button>
     </div>
   </section>
   <section class="image-section">
