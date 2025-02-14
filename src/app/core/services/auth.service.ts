@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { AuthResponseModel } from '../models/auth-response.model';
+import { UserDataService } from './user-data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,11 @@ export class AuthService {
   private LOGIN_URL = 'https://dummyjson.com/auth/login';
   private tokenKey = 'authToken';
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private userService: UserDataService
+  ) {}
 
   login(username: string, password: string): Observable<AuthResponseModel> {
     return this.httpClient
@@ -20,6 +25,15 @@ export class AuthService {
         tap((response) => {
           if (response.accessToken) {
             this.setToken(response.accessToken);
+            this.userService.setUser({
+              id: response.id,
+              username: response.username,
+              email: response.email,
+              firstName: response.firstName,
+              lastName: response.lastName,
+              gender: response.gender,
+              image: response.image,
+            });
           }
         })
       );
@@ -47,6 +61,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
+    this.userService.removeUser();
     this.router.navigate(['/login']);
   }
 }

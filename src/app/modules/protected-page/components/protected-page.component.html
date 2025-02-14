@@ -1,32 +1,32 @@
 <div class="card-container">
   <section class="info-section">
-    <h1 class="">¡Bienvenido Ramon Hernandez!</h1>
+    <h1 class="">¡Bienvenido {{ user?.username }} {{ user?.lastName }}!</h1>
 
     <div class="info-div">
-      <p><b>Usuario:</b> ramonH23</p>
+      <p><b>Usuario:</b> {{ user?.username }}</p>
     </div>
 
     <div class="info-div">
-      <p><b>Nombre:</b> Ramon Hernandez</p>
+      <p><b>Nombre:</b> {{ user?.firstName }} {{ user?.lastName }}</p>
     </div>
 
     <div class="info-div">
-      <p><b>Email:</b> ramon&#64;example.cl</p>
+      <p><b>Email:</b> {{ user?.email }}</p>
     </div>
 
     <div class="info-div">
-      <p><b>Genero:</b> Masculino</p>
+      <p><b>Genero:</b> {{ user?.gender }}</p>
     </div>
     <div class="info-div">
       <button (click)="logout()" class="">Logout</button>
     </div>
   </section>
   <section class="image-section">
-    <div class="">
+    <div *ngIf="user">
       <img
-        src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-user-profile-avatar-png-image_13369988.png"
-        alt=""
-        class=""
+        [attr.src]="user.image"
+        alt="Imagen de {{ user.username }}"
+        class="user-image"
       />
     </div>
   </section>
