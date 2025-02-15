@@ -1,0 +1,35 @@
+<div class="card-container">
+  <section class="info-section">
+    <h1 class="">¡Welcome {{ user?.username }} {{ user?.lastName }}!</h1>
+
+    <div class="info-div">
+      <p><b>User:</b> {{ user?.username }}</p>
+    </div>
+
+    <div class="info-div">
+      <p><b>Name:</b> {{ user?.firstName }} {{ user?.lastName }}</p>
+    </div>
+
+    <div class="info-div">
+      <p><b>Email:</b> {{ user?.email }}</p>
+    </div>
+
+    <div class="info-div">
+      <p><b>Genre:</b> {{ user?.gender }}</p>
+    </div>
+    <div class="info-div">
+      <button type="button" (click)="logout()" class="btn btn-danger">
+        Logout
+      </button>
+    </div>
+  </section>
+  <section class="image-section">
+    <div *ngIf="user">
+      <img
+        [attr.src]="user.image"
+        alt="Imagen de {{ user.username }}"
+        class="user-image"
+      />
+    </div>
+  </section>
+</div>
