@@ -1,11 +1,12 @@
 <div
+  *ngIf="errorMessage"
   class="alert-invalid-credentials alert alert-danger d-flex align-items-center"
   role="alert"
 >
-  <div>Error: Invalid credentials</div>
+  <span>{{ errorMessage }}</span>
 </div>
 <div class="login-card">
-  <h2>Ingresa sesión</h2>
+  <h2>Login</h2>
   <form [formGroup]="formLogin" class="form" (ngSubmit)="onSubmit()">
     <section class="form-group-container">
       <div class="form-group">
@@ -59,7 +60,7 @@
       class="btn btn-primary"
       [disabled]="formLogin.invalid"
     >
-      Ingresar
+      Login
     </button>
   </form>
 </div>

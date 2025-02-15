@@ -12,11 +12,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.css'],
 })
 export default class LoginComponent {
+  errorMessage: string = '';
   fb = inject(FormBuilder);
 
   formLogin: FormGroup = this.fb.group({
@@ -30,8 +31,12 @@ export default class LoginComponent {
     this.authService
       .login(this.formLogin.value.username, this.formLogin.value.password)
       .subscribe({
-        next: () => this.router.navigate(['/protected-page']),
-        error: (err) => console.log('Login failed', err),
+        next: () => {
+          this.router.navigate(['/protected-page']);
+        },
+        error: (err) => {
+          this.errorMessage = err;
+        },
       });
   }
 }

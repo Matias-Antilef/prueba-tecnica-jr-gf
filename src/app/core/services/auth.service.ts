@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { AuthResponseModel } from '@/app/core/models/auth-response.model';
 import { UserDataService } from '@/app/core/services/user-data.service';
 import { environment } from '@/enviroments/enviroment';
@@ -35,6 +35,9 @@ export class AuthService {
               image: response.image,
             });
           }
+        }),
+        catchError((err: HttpErrorResponse) => {
+          return throwError(() => new Error('Credentials are invalid'));
         })
       );
   }

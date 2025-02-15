@@ -4,7 +4,6 @@ import { UserDataService } from '@/app/core/services/user-data.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-protected-page',
@@ -17,7 +16,6 @@ export default class ProtectedPageComponent implements OnInit {
   user: UserFront | null = null;
   constructor(
     private authService: AuthService,
-    private router: Router,
     private userService: UserDataService
   ) {}
 
