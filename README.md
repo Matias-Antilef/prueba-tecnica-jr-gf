@@ -1,27 +1,86 @@
-# PruebaTecnicaJrGf
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.14.
+# Login Angular - Prueba Jr.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Instalación
 
-## Code scaffolding
+**Se requiere tener la CLI de angular instalada**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone https://github.com/grupo-firma-developer/prueba-tecnica-jr.git
+cd prueba-tecnica-jr
+```
 
-## Build
+```bash
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Variables de entorno
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Crear un archivo para agregar las variables de entorno en la ruta de:
 
-## Running end-to-end tests
+```bash
+src/enviroments/enviroments.ts
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Reemplazar <URL> por tu endpoint
 
-## Further help
+```bash
+export const environment = {
+  production: false,
+  loginURL: <URL>,
+};
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Despliegue
+
+```bash
+  ng serve
+```
+
+
+## Acerca de
+
+    Tecnologías usadas:
+
+    - Angular
+    - Bootstrap
+    - Karma
+
+
+## Caracteristicas implementadas:
+
+    Obligatorias:
+
+    ✅ Diseño responsivo: Utilizar Tailwind o Bootstrap.
+
+    ✅ Navegación entre vistas con Angular Router.
+
+    ✅ Protección de vistas con un guard de ruta.
+
+    ✅ Utilización de servicios de Angular.
+
+    ✅ Utilización de Git y Github para manejo de versiones y ramas.
+
+    ✅ Documentación básica para la instalación.
+
+    Deseables:
+
+    ✅ Validación de formulario.
+
+    ✅ Integrar animaciones en algunos elementos.
+
+    ✅ Página de error para rutas no encontradas (page error 404).
+
+    ✅ Buenas prácticas de programación (Código limpio, buen nombramiento de variables, principios SOLID, etc.).
+ 
+    ✅ Pruebas unitarias (E2E, Jasmine, Karma).
+
+    ✅ Subirlo a un servicio cloud gratuito (GitHub Pages, Render, Vercel, etc.).
+
+    ✅ Manejo de errores (Alertas, Try Catch, etc.).
+
+    ✅ Diagrama de flujo de usuario (Caso de uso, Diagrama de flujo que muestre lo que el usuario puede o no puede hacer).
+
