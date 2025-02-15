@@ -10,11 +10,12 @@ describe('LoginComponent', () => {
       providers: [AuthService, provideHttpClient(withFetch())],
     }).compileComponents();
   });
-  it('should create an instance of LoginComponent', () => {
+
+  it('should create an instance of LoginComponent -LoginTest-', () => {
     expect(LoginComponent).toBeTruthy();
   });
 
-  it('should have two inputs', () => {
+  it('should have two inputs -LoginTest-', () => {
     const fixture = TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
@@ -23,10 +24,20 @@ describe('LoginComponent', () => {
     expect(inputs.length).toBe(2);
   });
 
-  it(`should have the "Ingresa sesión" in the card`, () => {
+  it(`should have the "Login" in the card -LoginTest-`, () => {
     const fixture = TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h2')?.textContent).toEqual('Login');
+  });
+
+  it(`should have the button "Login" -LoginTest-`, () => {
+    const fixture = TestBed.createComponent(LoginComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    const button = compiled.querySelector('button');
+    expect(button).toBeTruthy();
+    expect(button?.textContent?.trim()).toBe('Login');
   });
 });
