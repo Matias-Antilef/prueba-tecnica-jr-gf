@@ -27,6 +27,6 @@ describe('LoginComponent', () => {
     const fixture = TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h2')?.textContent).toEqual('Ingresa sesión');
+    expect(compiled.querySelector('h2')?.textContent).toEqual('Login');
   });
 });
