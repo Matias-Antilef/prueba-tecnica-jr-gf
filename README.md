@@ -37,7 +37,7 @@ export const environment = {
 ## Despliegue
 
 ```bash
-  ng serve
+ng serve
 ```
 
 
