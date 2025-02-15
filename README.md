@@ -48,6 +48,10 @@ export const environment = {
     - Angular
     - Bootstrap
     - Karma
+## Diagrama de flujo
+
+![app drawio](https://github.com/user-attachments/assets/a7204e8a-274d-4a0c-a3aa-e53d5db8e91a)
+ 
 
 
 ## Caracteristicas implementadas:
